@@ -1,0 +1,16 @@
+{
+  "bootstrap": {
+    "server": "couchbase://172.17.0.2", 
+    "username": "sync_gateway", 
+    "password": "password",
+    "server_tls_skip_verify": true, 
+    "use_tls_server": false 
+  },
+  "logging": { 
+    "console": {
+      "enabled": true,
+      "log_level": "info",
+      "log_keys": ["*"]
+    }
+  }
+}

@@ -1,0 +1,44 @@
+version: '3.9'
+services:
+  cb-server1:
+    container_name: cb-node1
+    image: couchbase:enterprise
+    ports:
+      - '8091-8096:8091-8096'
+      - '11210-11211:11210-11211'
+    volumes:
+      - ./couchbase/node1:/opt/couchbase/var
+    networks:
+      cb-net:
+        ipv4_address: 10.5.0.2
+  cb-server2:
+    container_name: cb-node2
+    image: couchbase:enterprise
+    volumes:
+      - ./couchbase/node2:/opt/couchbase/var
+    networks:
+      cb-net:
+        ipv4_address: 10.5.0.3
+  cb-server3:
+    container_name: cb-node3
+    image: couchbase:enterprise
+    volumes:
+      - ./couchbase/node3:/opt/couchbase/var
+    ports:
+      - '4984-4986:4984-4986'
+    networks:
+      cb-net:
+        ipv4_address: 10.5.0.4
+  sgw:
+    container_name: cb-sgw
+    image: couchbase/sync-gateway:enterprise
+    volumes:
+      - ./config.json:/etc/sync_gateway/config.json
+    networks:
+      cb-net:
+        ipv4_address: 10.5.0.5
+
+networks:
+  cb-net:
+    external: true
+    name: my-bridge-network
