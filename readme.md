@@ -56,4 +56,10 @@ docker compose up cb-server1 cb-server2 cb-server3 -d
 
 ```
 
-- Initialize the cluster and create a bucket
+- Initialize the cluster and create a bucket (ensure flush is enabled)
+
+- Start SGW container
+
+```
+docker compose up sgw -d
+```
