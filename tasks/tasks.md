@@ -38,7 +38,7 @@
 - The get document didnt work because:
 - http://localhost:4985/db1/2
 - Change it to:
-- http://localhost:4985/db1/2
+- http://localhost:4985/db1/1
 - and it worked
 
 ## Task 3
