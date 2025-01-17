@@ -34,6 +34,12 @@
 - Get the document using Postman
 
 ### Observations
+- The create database and create document worked correctly as with SGW setup 2
+- The get document didnt work because:
+- http://localhost:4985/db1/2
+- Change it to:
+- http://localhost:4985/db1/2
+- and it worked
 
 ## Task 3
 
